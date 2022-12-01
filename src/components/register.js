@@ -1,14 +1,14 @@
-/* eslint-disable import/no-cycle */
-import { onNavigate } from '../main.js';
-
-export const register = () => {
+export const register = (onNavigate) => {
+  // div general
   const homeDiv = document.createElement('div');
   homeDiv.textContent = 'Bienvenido al Registro';
-  const btnLogin = document.createElement('button');
 
-  btnLogin.textContent = 'Regresar al Login';
+  // boton regresar al home
+  const btnHome = document.createElement('button');
+  btnHome.textContent = 'Regresar al Home';
+  homeDiv.appendChild(btnHome);
 
-  homeDiv.appendChild(btnLogin);
+  btnHome.addEventListener('click', () => onNavigate('/'));
 
   return homeDiv;
 };
