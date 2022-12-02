@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.homeDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+.title {
+    margin: 15%;
+}
+.divButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10%;
+    height: auto;
+    width: 100%;
+}
+.buttonLogin{
+margin: 5%;
+width: 50%;
+}
+.buttonRegister{
+margin: 5%;
+width: 50%;
+}
+.divGoogleLinked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+}
+.btnLinkedIn{
+margin: 5%;
+}
+.btnGoogle{
+margin: 5%;
+}
