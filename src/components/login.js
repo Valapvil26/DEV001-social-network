@@ -1,37 +1,45 @@
 export const login = (onNavigate) => {
 // div cuerpo login
   const homeDiv = document.createElement('div');
-  homeDiv.className = 'divHome';
+  homeDiv.className = 'homeDivLogin';
+  // div contenedor de inputs
+  const inputDiv = document.createElement('div');
+  inputDiv.className = 'divInputs';
+  homeDiv.appendChild(inputDiv);
+  // titulo usuario o email
+  const userEmailTitle = document.createElement('h3');
+  userEmailTitle.className = 'userEmailTilte';
+  userEmailTitle.textContent = 'Correo Electronico';
+  inputDiv.appendChild(userEmailTitle);
   // input usuario
   const inputMail = document.createElement('input');
   inputMail.className = 'inputMail';
   inputMail.textContent = 'Correo Electronico o Nombre de Usuario';
-  homeDiv.appendChild(inputMail);
+  inputDiv.appendChild(inputMail);
+  // titulo password
+  const passwordTitle = document.createElement('h3');
+  passwordTitle.className = 'passwordTilte';
+  passwordTitle.textContent = 'Contraseña';
+  inputDiv.appendChild(passwordTitle);
   // input contraseña
   const inputPassword = document.createElement('input');
   inputPassword.className = 'inputPassword';
   inputPassword.textContent = 'Contraseña';
-  homeDiv.appendChild(inputPassword);
-  // boton ir al registro
-  const btnSignUp = document.createElement('button');
-  btnSignUp.className = 'btnSingUp';
-  btnSignUp.textContent = 'Regístrate';
-  homeDiv.appendChild(btnSignUp);
+  inputDiv.appendChild(inputPassword);
+  // div contenedor de botones ir al registro o logearse
+  const divSignUpLogin = document.createElement('div');
+  divSignUpLogin.className = 'divSingUpLogin';
+  homeDiv.appendChild(divSignUpLogin);
   // boton logearse
   const btnLogin = document.createElement('button');
   btnLogin.className = 'btnLogin';
   btnLogin.textContent = 'Inicia Sesión';
-  homeDiv.appendChild(btnLogin);
-  // boton logearse con Google
-  const btnGoogle = document.createElement('button');
-  btnGoogle.className = 'btnGoogle';
-  btnGoogle.textContent = 'Regístrate con Google';
-  homeDiv.appendChild(btnGoogle);
-  // boton logearse con LinkedIN
-  const btnLinked = document.createElement('button');
-  btnLinked.className = 'btnLinkedIn';
-  btnLinked.textContent = 'Regístrate con LinkedIn';
-  homeDiv.appendChild(btnLinked);
+  divSignUpLogin.appendChild(btnLogin);
+  // boton ir al registro
+  const btnSignUp = document.createElement('button');
+  btnSignUp.className = 'btnSingUp';
+  btnSignUp.textContent = 'Regístrate';
+  divSignUpLogin.appendChild(btnSignUp);
 
   btnSignUp.addEventListener('click', () => onNavigate('/register'));
 
