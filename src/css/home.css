@@ -1,0 +1,104 @@
+/**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  /*Para quitar las letras subrayadas*/
+}
+
+/*------------- Lo utilizo para definir los colores ------*/
+:root {
+  --white_color: #edf6f9;
+  --white_color2: #ffffff;
+  --azul_color: #0371bf;
+  --sombra: linear-gradient (90deg, #e2b3c5 80%, #ffffff 50%);
+  --sombra2: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+/**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+
+/* home */
+.homeDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  margin-top: 0;
+  background-image: var(--sombra2);
+  z-index: 1;
+}
+.title {
+  margin: 15%;
+  height: 50px;
+  width: 50px;
+  z-index: 2;
+}
+.divButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10%;
+  height: auto;
+  width: 100%;
+}
+.buttonLogin {
+  margin: 5%;
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+  font-family: Queenie-Sans;
+  background-color: var(--azul_color);
+  color: var(--white_color2);
+  border: none;
+  border-radius: 5px;
+}
+
+.buttonRegister {
+  margin: 5%;
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+  font-family: Queenie-Sans;
+  background-color: var(--azul_color);
+  color: var(--white_color2);
+  border: none;
+  border-radius: 5px;
+}
+.divGoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  color: var(--azul_color);
+}
+
+.iconGoogle {
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnGoogle{
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.option {
+  color: var(--white_color2);
+  font-size: 20px;
+  font-family: Queenie-Sans;
+}
+
+.imageLogo {
+  width: 280px;
+  height: 350px;
+  padding-top: 100px;
+  bottom: 80px;
+}
+
