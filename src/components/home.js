@@ -43,6 +43,9 @@ export const Home = (onNavigate) => {
 
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  btnGoogle.addEventListener('click', () => {
+
+  });
 
   return homeDiv;
 };
