@@ -40,6 +40,9 @@ export const Home = (onNavigate) => {
   btnGoogle.appendChild(iconGoogle);
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  btnGoogle.addEventListener('click', () => {
+
+  });
 
   return homeDiv;
 };

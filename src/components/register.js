@@ -1,3 +1,5 @@
+import { singUp } from '../firebase/firebaseconfig.js';
+
 export const register = (onNavigate) => {
   // div general
   const homeDiv = document.createElement('div');
@@ -17,27 +19,29 @@ export const register = (onNavigate) => {
   userNameTitle.textContent = 'Nombre de ususario';
   divInput.appendChild(userNameTitle);
   // input nombre de usuario
-  const inputAddUserName = document.createElement('input');
-  inputAddUserName.className = 'inputAddUserName';
-  divInput.appendChild(inputAddUserName);
+  const userName = document.createElement('input');
+  userName.className = 'inputAddUserName';
+  divInput.appendChild(userName);
   // titulo correo electronico
   const emailTitle = document.createElement('p');
   emailTitle.className = 'emailTitle';
   emailTitle.textContent = 'Correo Electronico';
   divInput.appendChild(emailTitle);
   // input correo
-  const inputAddMail = document.createElement('input');
-  inputAddMail.className = 'inputAddMail';
-  divInput.appendChild(inputAddMail);
+  const email = document.createElement('input');
+  email.className = 'inputAddMail';
+  email.type = 'email';
+  divInput.appendChild(email);
   // titulo contraseña
   const passwordTitle = document.createElement('p');
   passwordTitle.className = 'passwordTitle';
   passwordTitle.textContent = 'Contraseña';
   divInput.appendChild(passwordTitle);
   // input contraseña
-  const inputAddPassword = document.createElement('input');
-  inputAddPassword.className = 'inputAddPassword';
-  divInput.appendChild(inputAddPassword);
+  const password = document.createElement('input');
+  password.className = 'inputAddPassword';
+  password.type = 'password';
+  divInput.appendChild(password);
   // titulo contraseña
   const confirmPassword = document.createElement('p');
   confirmPassword.className = 'confirmPassword';
@@ -46,6 +50,8 @@ export const register = (onNavigate) => {
   // input confirmar contraseña
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
+  inputConfirmPassword.type = 'password';
+  inputConfirmPassword.placeholder = 'Confirmar Contraseña';
   divInput.appendChild(inputConfirmPassword);
   // boton registrarme
   const btnregister = document.createElement('button');
@@ -59,6 +65,21 @@ export const register = (onNavigate) => {
   homeDiv.appendChild(btnHome);
 
   btnHome.addEventListener('click', () => onNavigate('/'));
+
+  btnregister.addEventListener('click', () => {
+    const userCredentials = singUp(email.value, password.value)
+      .then((userCredential) => {
+        onNavigate('/wall');
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('error en singup', errorCode, errorMessage);
+      });
+    console.log(userCredentials);
+  });
 
   return homeDiv;
 };

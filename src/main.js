@@ -1,6 +1,7 @@
 import { Home } from './components/home.js';
 import { login } from './components/login.js';
 import { register } from './components/register.js';
+import { Wall } from './components/wall.js';
 
 const rootDiv = document.getElementById('root');
 
@@ -21,6 +22,7 @@ routes = {
   '/': Home(onNavigate),
   '/login': login(onNavigate),
   '/register': register(onNavigate),
+  '/wall': Wall(onNavigate),
 };
 
 const component = () => routes[window.location.pathname];
