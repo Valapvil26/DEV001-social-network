@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+/**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /*Para quitar las letras subrayadas*/
+}
+
+/*------------- Lo utilizo para definir los colores ------*/
+:root {
+    --white_color: #edf6f9;
+    --white_color2: #ffffff;
+    --azul_color: #0371bf;
+    --rosa_color1: #c55189;
+    --rosa_color2: #ff86ba;
+    --rosa_color3: #ff9497;
+    --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
+    --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
+}
+/**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+
 /* login */
 .homeDivLogin {
     display: flex;
@@ -6,9 +30,21 @@
     flex-direction: column;
     height: auto;
     width: 100%;
-    margin-top: 40%;
+    margin-top: 0;
+    background-image: var(--sombra2);
+    z-index: 1;
 }
+
 .divInputs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;   
+}
+
+.inputDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,30 +52,70 @@
     height: auto;
     width: 100%;
 }
-.userEmailTilte {
-    margin: 5%;
-}
+
 .inputMail {
-    width: 40%;
-}
-.passwordTilte {
     margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
 }
+
+::placeholder {
+    color: var(--rosa_color1);
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: Queenie-Sans;
+}
+
 .inputPassword {
-    width: 40%;
+    margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
 }
+
 .divSingUpLogin {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     margin: 10%;
 }
-.btnSingUp {
-    margin: 5%;
-    width: 30%;
-}
 .btnLogin {
-    margin: 5%;
-    width: 30%;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 40px;
+    font-family: Queenie-Sans;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnSingUp {
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 150px;
+    width: 150px;
+    height: 40px;
+    font-family: Queenie-Sans;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imageLogo1 {
+    width: 180px;
+    height: 280px;
+    padding-top: 100px;
+    display:flex;
+    padding-bottom: 30px;
 }

@@ -4,31 +4,25 @@ export const login = (onNavigate) => {
 // div cuerpo login
   const homeDiv = document.createElement('div');
   homeDiv.className = 'homeDivLogin';
+  // imagen logo
+  const imageLogo1 = document.createElement('img');
+  imageLogo1.className = 'imageLogo1';
+  imageLogo1.src = './img/logo_1.png';
+  homeDiv.appendChild(imageLogo1);
   // div contenedor de inputs
   const inputDiv = document.createElement('div');
   inputDiv.className = 'divInputs';
   homeDiv.appendChild(inputDiv);
-  // titulo usuario o email
-  const userEmailTitle = document.createElement('h3');
-  userEmailTitle.className = 'userEmailTilte';
-  userEmailTitle.textContent = 'Correo Electronico';
-  inputDiv.appendChild(userEmailTitle);
-  // input usuario
   const email = document.createElement('input');
   email.className = 'inputMail';
   email.type = 'email';
-  email.textContent = 'Correo Electronico o Nombre de Usuario';
+  email.placeholder = 'Correo o Usuario';
   inputDiv.appendChild(email);
-  // titulo password
-  const passwordTitle = document.createElement('h3');
-  passwordTitle.className = 'passwordTilte';
-  passwordTitle.textContent = 'Contraseña';
-  inputDiv.appendChild(passwordTitle);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputPassword';
   password.type = 'password';
-  password.textContent = 'Contraseña';
+  password.placeholder = 'Contraseña';
   inputDiv.appendChild(password);
   // div contenedor de botones ir al registro o logearse
   const divSignUpLogin = document.createElement('div');

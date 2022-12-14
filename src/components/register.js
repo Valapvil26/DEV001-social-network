@@ -4,53 +4,36 @@ export const register = (onNavigate) => {
   // div general
   const homeDiv = document.createElement('div');
   homeDiv.className = 'homeDivRegister';
-  // titulo registro
-  const registerTitle = document.createElement('h3');
-  registerTitle.className = 'registerTitle';
-  registerTitle.textContent = 'Bienvenido al Registro';
-  homeDiv.appendChild(registerTitle);
+  // imagen logo de registro
+  const imageLogo2 = document.createElement('img');
+  imageLogo2.className = 'imageLogo2';
+  imageLogo2.src = './img/logo_1.png';
+  homeDiv.appendChild(imageLogo2);
   // div contenedor formulario de registro
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
   homeDiv.appendChild(divInput);
-  // titulo nombre de usuaro
-  const userNameTitle = document.createElement('p');
-  userNameTitle.className = 'userNameTitle';
-  userNameTitle.textContent = 'Nombre de ususario';
-  divInput.appendChild(userNameTitle);
   // input nombre de usuario
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
+  userName.placeholder = 'Nombre Usuario';
   divInput.appendChild(userName);
-  // titulo correo electronico
-  const emailTitle = document.createElement('p');
-  emailTitle.className = 'emailTitle';
-  emailTitle.textContent = 'Correo Electronico';
-  divInput.appendChild(emailTitle);
   // input correo
   const email = document.createElement('input');
   email.className = 'inputAddMail';
-  email.type = 'email';
+  // email.type = 'email';
+  email.placeholder = 'Correo Electónico';
   divInput.appendChild(email);
-  // titulo contraseña
-  const passwordTitle = document.createElement('p');
-  passwordTitle.className = 'passwordTitle';
-  passwordTitle.textContent = 'Contraseña';
-  divInput.appendChild(passwordTitle);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputAddPassword';
-  password.type = 'password';
+  // password.type = 'password';
+  password.placeholder = 'Contraseña';
   divInput.appendChild(password);
-  // titulo contraseña
-  const confirmPassword = document.createElement('p');
-  confirmPassword.className = 'confirmPassword';
-  confirmPassword.textContent = 'Confirmar Contraseña';
-  divInput.appendChild(confirmPassword);
   // input confirmar contraseña
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
-  inputConfirmPassword.type = 'password';
+  // inputConfirmPassword.type = 'password';
   inputConfirmPassword.placeholder = 'Confirmar Contraseña';
   divInput.appendChild(inputConfirmPassword);
   // boton registrarme
@@ -63,8 +46,24 @@ export const register = (onNavigate) => {
   btnHome.className = 'btnbackHome';
   btnHome.textContent = 'Regresar al Home';
   homeDiv.appendChild(btnHome);
+  const option1 = document.createElement('h3');
+  option1.className = 'option1';
+  option1.textContent = '------------------ ó ------------------';
+  homeDiv.appendChild(option1);
+  // div contenedor botones logearse con google register
+  const divGoogle1 = document.createElement('div');
+  divGoogle1.className = 'divGoogle1';
+  homeDiv.appendChild(divGoogle1);
+  // boton logearse con Google1
+  const btnGoogle1 = document.createElement('button');
+  btnGoogle1.className = 'btnGoogle1';
+  divGoogle1.appendChild(btnGoogle1);
+  const iconGoogle1 = document.createElement('i');
+  iconGoogle1.className = 'fa-brands fa-google';
+  btnGoogle1.appendChild(iconGoogle1);
 
   btnHome.addEventListener('click', () => onNavigate('/'));
+  btnGoogle1.addEventListener('click', () => {});
 
   btnregister.addEventListener('click', () => {
     const userCredentials = singUp(email.value, password.value)
