@@ -13,51 +13,56 @@ export const register = (onNavigate) => {
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
   homeDiv.appendChild(divInput);
+  // formulario de registro
+  const formRegister = document.createElement('form');
+  formRegister.className = 'formRegister';
+  divInput.appendChild(formRegister);
   // titulo nombre de usuaro
   const userNameTitle = document.createElement('p');
   userNameTitle.className = 'userNameTitle';
   userNameTitle.textContent = 'Nombre de ususario';
-  divInput.appendChild(userNameTitle);
+  formRegister.appendChild(userNameTitle);
   // input nombre de usuario
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
-  divInput.appendChild(userName);
+  formRegister.appendChild(userName);
   // titulo correo electronico
   const emailTitle = document.createElement('p');
   emailTitle.className = 'emailTitle';
   emailTitle.textContent = 'Correo Electronico';
-  divInput.appendChild(emailTitle);
+  formRegister.appendChild(emailTitle);
   // input correo
   const email = document.createElement('input');
   email.className = 'inputAddMail';
   email.type = 'email';
-  divInput.appendChild(email);
+  formRegister.appendChild(email);
   // titulo contraseña
   const passwordTitle = document.createElement('p');
   passwordTitle.className = 'passwordTitle';
   passwordTitle.textContent = 'Contraseña';
-  divInput.appendChild(passwordTitle);
+  formRegister.appendChild(passwordTitle);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputAddPassword';
   password.type = 'password';
-  divInput.appendChild(password);
+  formRegister.appendChild(password);
   // titulo contraseña
   const confirmPassword = document.createElement('p');
   confirmPassword.className = 'confirmPassword';
   confirmPassword.textContent = 'Confirmar Contraseña';
-  divInput.appendChild(confirmPassword);
+  formRegister.appendChild(confirmPassword);
   // input confirmar contraseña
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
   inputConfirmPassword.type = 'password';
   inputConfirmPassword.placeholder = 'Confirmar Contraseña';
-  divInput.appendChild(inputConfirmPassword);
+  formRegister.appendChild(inputConfirmPassword);
   // boton registrarme
   const btnregister = document.createElement('button');
+  btnregister.type = 'submit';
   btnregister.className = 'btnRegisterMe';
   btnregister.textContent = 'Registrarme';
-  homeDiv.appendChild(btnregister);
+  formRegister.appendChild(btnregister);
   // boton regresar al home
   const btnHome = document.createElement('button');
   btnHome.className = 'btnbackHome';
@@ -66,7 +71,8 @@ export const register = (onNavigate) => {
 
   btnHome.addEventListener('click', () => onNavigate('/'));
 
-  btnregister.addEventListener('click', () => {
+  btnregister.addEventListener('submit', (e) => {
+    e.preventDefault();
     const userCredentials = singUp(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');

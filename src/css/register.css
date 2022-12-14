@@ -27,6 +27,14 @@
     height: auto;
     width: 100%;
 }
+.formRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
 p {
     margin: 5%;
 }

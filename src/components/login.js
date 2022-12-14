@@ -8,37 +8,42 @@ export const login = (onNavigate) => {
   const inputDiv = document.createElement('div');
   inputDiv.className = 'divInputs';
   homeDiv.appendChild(inputDiv);
+  // formulario login
+  const formLogin = document.createElement('form');
+  formLogin.className = 'formLogin';
+  inputDiv.appendChild(formLogin);
   // titulo usuario o email
   const userEmailTitle = document.createElement('h3');
   userEmailTitle.className = 'userEmailTilte';
   userEmailTitle.textContent = 'Correo Electronico';
-  inputDiv.appendChild(userEmailTitle);
+  formLogin.appendChild(userEmailTitle);
   // input usuario
   const email = document.createElement('input');
   email.className = 'inputMail';
   email.type = 'email';
   email.textContent = 'Correo Electronico o Nombre de Usuario';
-  inputDiv.appendChild(email);
+  formLogin.appendChild(email);
   // titulo password
   const passwordTitle = document.createElement('h3');
   passwordTitle.className = 'passwordTilte';
   passwordTitle.textContent = 'Contraseña';
-  inputDiv.appendChild(passwordTitle);
+  formLogin.appendChild(passwordTitle);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputPassword';
   password.type = 'password';
   password.textContent = 'Contraseña';
-  inputDiv.appendChild(password);
-  // div contenedor de botones ir al registro o logearse
-  const divSignUpLogin = document.createElement('div');
-  divSignUpLogin.className = 'divSingUpLogin';
-  homeDiv.appendChild(divSignUpLogin);
+  formLogin.appendChild(password);
   // boton logearse
   const btnLogin = document.createElement('button');
   btnLogin.className = 'btnLogin';
+  btnLogin.type = 'submit';
   btnLogin.textContent = 'Inicia Sesión';
-  divSignUpLogin.appendChild(btnLogin);
+  formLogin.appendChild(btnLogin);
+  // div contenedor de botone ir al registro
+  const divSignUpLogin = document.createElement('div');
+  divSignUpLogin.className = 'divSingUpLogin';
+  homeDiv.appendChild(divSignUpLogin);
   // boton ir al registro
   const btnSignUp = document.createElement('button');
   btnSignUp.className = 'btnSingUp';
@@ -46,7 +51,8 @@ export const login = (onNavigate) => {
   divSignUpLogin.appendChild(btnSignUp);
 
   btnSignUp.addEventListener('click', () => onNavigate('/register'));
-  btnLogin.addEventListener('click', () => {
+  btnLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
     singIn(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');

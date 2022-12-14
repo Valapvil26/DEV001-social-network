@@ -34,10 +34,10 @@ export const Home = (onNavigate) => {
   const btnGoogle = document.createElement('button');
   btnGoogle.className = 'btnGoogle';
   divGoogle.appendChild(btnGoogle);
-  const iconGoogle = document.createElement('img');
-  iconGoogle.className = 'iconGoogle';
-  iconGoogle.src = '../img/google_1.png';
+  const iconGoogle = document.createElement('i');
+  iconGoogle.className = 'fa-brands fa-google';
   btnGoogle.appendChild(iconGoogle);
+
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   btnGoogle.addEventListener('click', () => {
