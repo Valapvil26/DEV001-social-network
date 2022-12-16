@@ -1,14 +1,14 @@
-import { singUp } from '../firebase/firebaseconfig.js';
+import { singUp } from '../firebase/firebase.js';
 
 export const register = (onNavigate) => {
   // div general
   const homeDiv = document.createElement('div');
   homeDiv.className = 'homeDivRegister';
-  // titulo registro
-  const registerTitle = document.createElement('h3');
-  registerTitle.className = 'registerTitle';
-  registerTitle.textContent = 'Bienvenido al Registro';
-  homeDiv.appendChild(registerTitle);
+  // imagen logo de registro
+  const imageLogo2 = document.createElement('img');
+  imageLogo2.className = 'imageLogo2';
+  imageLogo2.src = './img/logo_1.png';
+  homeDiv.appendChild(imageLogo2);
   // div contenedor formulario de registro
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
@@ -17,40 +17,23 @@ export const register = (onNavigate) => {
   const formRegister = document.createElement('form');
   formRegister.className = 'formRegister';
   divInput.appendChild(formRegister);
-  // titulo nombre de usuaro
-  const userNameTitle = document.createElement('p');
-  userNameTitle.className = 'userNameTitle';
-  userNameTitle.textContent = 'Nombre de ususario';
-  formRegister.appendChild(userNameTitle);
   // input nombre de usuario
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
+  userName.placeholder = 'Nombre Usuario';
   formRegister.appendChild(userName);
-  // titulo correo electronico
-  const emailTitle = document.createElement('p');
-  emailTitle.className = 'emailTitle';
-  emailTitle.textContent = 'Correo Electronico';
-  formRegister.appendChild(emailTitle);
   // input correo
   const email = document.createElement('input');
   email.className = 'inputAddMail';
   email.type = 'email';
+  email.placeholder = 'Correo Electronico';
   formRegister.appendChild(email);
-  // titulo contraseña
-  const passwordTitle = document.createElement('p');
-  passwordTitle.className = 'passwordTitle';
-  passwordTitle.textContent = 'Contraseña';
-  formRegister.appendChild(passwordTitle);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputAddPassword';
   password.type = 'password';
+  password.placeholder = 'Contraseña';
   formRegister.appendChild(password);
-  // titulo contraseña
-  const confirmPassword = document.createElement('p');
-  confirmPassword.className = 'confirmPassword';
-  confirmPassword.textContent = 'Confirmar Contraseña';
-  formRegister.appendChild(confirmPassword);
   // input confirmar contraseña
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
@@ -68,10 +51,27 @@ export const register = (onNavigate) => {
   btnHome.className = 'btnbackHome';
   btnHome.textContent = 'Regresar al Home';
   homeDiv.appendChild(btnHome);
+  // texto ó
+  const option1 = document.createElement('h3');
+  option1.className = 'option1';
+  option1.textContent = '------------------ ó ------------------';
+  homeDiv.appendChild(option1);
+  // div contenedor botones logearse con google register
+  const divGoogle1 = document.createElement('div');
+  divGoogle1.className = 'divGoogle1';
+  homeDiv.appendChild(divGoogle1);
+  // boton logearse con Google1
+  const btnGoogle1 = document.createElement('button');
+  btnGoogle1.className = 'btnGoogle1';
+  divGoogle1.appendChild(btnGoogle1);
+  const iconGoogle1 = document.createElement('i');
+  iconGoogle1.className = 'fa-brands fa-google';
+  btnGoogle1.appendChild(iconGoogle1);
 
   btnHome.addEventListener('click', () => onNavigate('/'));
+  btnGoogle1.addEventListener('click', () => {});
 
-  btnregister.addEventListener('submit', (e) => {
+  formRegister.addEventListener('submit', (e) => {
     e.preventDefault();
     const userCredentials = singUp(email.value, password.value)
       .then((userCredential) => {

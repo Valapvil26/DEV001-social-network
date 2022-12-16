@@ -3,7 +3,7 @@ export const Wall = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.className = 'homeDivWall';
   // titulo registro
-  const wallTitle = document.createElement('h1');
+  const wallTitle = document.createElement('h2');
   wallTitle.className = 'wallTitle';
   wallTitle.textContent = 'Bienvenido al Muro';
   homeDiv.appendChild(wallTitle);

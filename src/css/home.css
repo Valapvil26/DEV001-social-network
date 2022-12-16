@@ -12,41 +12,49 @@
   --white_color: #edf6f9;
   --white_color2: #ffffff;
   --azul_color: #0371bf;
-  --sombra: linear-gradient (90deg, #e2b3c5 80%, #ffffff 50%);
-  --sombra2: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  --rosa_color1: #c55189;
+  --rosa_color2: #ff86ba;
+  --rosa_color3: #ff9497;
+  --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
+  --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
 }
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* home */
+
 .homeDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: auto;
+  height: 100%;
   width: 100%;
   margin-top: 0;
   background-image: var(--sombra2);
   z-index: 1;
 }
+
 .title {
   margin: 15%;
   height: 50px;
   width: 50px;
   z-index: 2;
 }
+
 .divButtons {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 10%;
+  margin: 5%;
   height: auto;
   width: 100%;
+  cursor: pointer;
 }
+
 .buttonLogin {
   margin: 5%;
-  width: 30%;
+  width: 150px;
   height: 40px;
   font-size: 20px;
   font-family: Queenie-Sans;
@@ -54,11 +62,12 @@
   color: var(--white_color2);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .buttonRegister {
   margin: 5%;
-  width: 30%;
+  width: 150px;
   height: 40px;
   font-size: 20px;
   font-family: Queenie-Sans;
@@ -66,14 +75,17 @@
   color: var(--white_color2);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
+
 .divGoogle {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10%;
+  margin: 5%;
   color: var(--azul_color);
 }
+
 .fa-google {
   justify-content: center;
   align-items: center;
@@ -92,11 +104,13 @@
   color: var(--white_color2);
   font-size: 20px;
   font-family: Queenie-Sans;
+  margin-bottom: 2%;
 }
 .imageLogo {
   width: 280px;
-  height: 350px;
-  padding-top: 100px;
-  bottom: 80px;
+  height: auto;
+  bottom: 50px;
+  margin-top: 20%;
+  margin-bottom: 5%;
 }
 

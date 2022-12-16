@@ -1,3 +1,25 @@
+/**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /*Para quitar las letras subrayadas*/
+}
+
+/*------------- Lo utilizo para definir los colores ------*/
+:root {
+    --white_color: #edf6f9;
+    --white_color2: #ffffff;
+    --azul_color: #0371bf;
+    --rosa_color1: #c55189;
+    --rosa_color2: #ff86ba;
+    --rosa_color3: #ff9497;
+    --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
+    --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
+}
+/**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+
 /* registro */
 .homeDivRegister {
     display: flex;
@@ -6,11 +28,22 @@
     flex-direction: column;
     height: auto;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 0;
+    background-image: var(--sombra2);
+    z-index: 1;
 }
+
 .registerTitle {
     margin: 10%;
 }
+
+::placeholder {
+    color: var(--rosa_color1);
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: Queenie-Sans;
+}
+
 .inputDiv {
     display: flex;
     justify-content: center;
@@ -19,6 +52,7 @@
     height: auto;
     width: 100%;
 }
+
 .divInputRegister {
     display: flex;
     justify-content: center;
@@ -27,6 +61,7 @@
     height: auto;
     width: 100%;
 }
+
 .formRegister {
     display: flex;
     justify-content: center;
@@ -35,12 +70,102 @@
     height: auto;
     width: 100%;
 }
-p {
+
+.inputAddUserName {
     margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
 }
+
+.inputAddMail {
+    margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputAddPassword {
+    margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputConfirmPassword {
+    margin: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
 .btnRegisterMe {
-    margin: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 150px;
+    height: 40px;
+    font-family: Queenie-Sans;
+    font-size: 18px;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .btnbackHome {
+    margin-bottom: 3%;
+    width: 150px;
+    height: 40px;
+    font-family: Queenie-Sans;
+    font-size: 18px;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imageLogo2 {
+    width: 180px;
+    height: auto;
+    display:flex;
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.option1 {
+    color: var(--white_color2);
+    font-size: 20px;
+    font-family: Queenie-Sans;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.divGoogle1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5%;
+    color: var(--azul_color);
+}
+
+.fa-google {
+    justify-content: center;
+    align-items: center;
+    color: var(--azul_color);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.btnGoogle1{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 }

@@ -1,3 +1,5 @@
+import { singInGoogle } from '../firebase/firebase.js';
+
 export const Home = (onNavigate) => {
 // div general
   const homeDiv = document.createElement('div');
@@ -41,7 +43,14 @@ export const Home = (onNavigate) => {
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   btnGoogle.addEventListener('click', () => {
-
+    singInGoogle()
+      .then(() => {
+        onNavigate('/wall');
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
   });
 
   return homeDiv;
