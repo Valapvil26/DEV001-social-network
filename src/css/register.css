@@ -62,6 +62,15 @@
     width: 100%;
 }
 
+.formRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
 .inputAddUserName {
     margin: 5%;
     width: 250px;
@@ -95,12 +104,12 @@
 }
 
 .btnRegisterMe {
-    margin: 5%;
-    margin-left: 2%;
-    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
+    font-size: 18px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -110,11 +119,10 @@
 
 .btnbackHome {
     margin-bottom: 3%;
-    margin-left: 2%;
-    margin-right: 5%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
+    font-size: 18px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -124,25 +132,25 @@
 
 .imageLogo2 {
     width: 180px;
-    height: 280px;
-    padding-top: 100px;
+    height: auto;
     display:flex;
-    padding-bottom: 30px;
+    margin-top: 20%;
+    margin-bottom: 10%;
 }
 
 .option1 {
     color: var(--white_color2);
     font-size: 20px;
     font-family: Queenie-Sans;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .divGoogle1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10%;
+    margin: 5%;
     color: var(--azul_color);
 }
 
