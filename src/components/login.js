@@ -1,4 +1,4 @@
-import { singIn } from '../firebase/firebaseconfig.js';
+import { singIn } from '../firebase/firebase.js';
 
 export const login = (onNavigate) => {
 // div cuerpo login
@@ -13,26 +13,32 @@ export const login = (onNavigate) => {
   const inputDiv = document.createElement('div');
   inputDiv.className = 'divInputs';
   homeDiv.appendChild(inputDiv);
+  // formulario login
+  const formLogin = document.createElement('form');
+  formLogin.className = 'formLogin';
+  inputDiv.appendChild(formLogin);
+  // input usuario
   const email = document.createElement('input');
   email.className = 'inputMail';
   email.type = 'email';
   email.placeholder = 'Correo o Usuario';
-  inputDiv.appendChild(email);
+  formLogin.appendChild(email);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputPassword';
   password.type = 'password';
   password.placeholder = 'Contraseña';
-  inputDiv.appendChild(password);
-  // div contenedor de botones ir al registro o logearse
-  const divSignUpLogin = document.createElement('div');
-  divSignUpLogin.className = 'divSingUpLogin';
-  homeDiv.appendChild(divSignUpLogin);
+  formLogin.appendChild(password);
   // boton logearse
   const btnLogin = document.createElement('button');
   btnLogin.className = 'btnLogin';
+  btnLogin.type = 'submit';
   btnLogin.textContent = 'Inicia Sesión';
-  divSignUpLogin.appendChild(btnLogin);
+  formLogin.appendChild(btnLogin);
+  // div contenedor de boton ir al registro
+  const divSignUpLogin = document.createElement('div');
+  divSignUpLogin.className = 'divSingUpLogin';
+  homeDiv.appendChild(divSignUpLogin);
   // boton ir al registro
   const btnSignUp = document.createElement('button');
   btnSignUp.className = 'btnSingUp';
@@ -40,7 +46,8 @@ export const login = (onNavigate) => {
   divSignUpLogin.appendChild(btnSignUp);
 
   btnSignUp.addEventListener('click', () => onNavigate('/register'));
-  btnLogin.addEventListener('click', () => {
+  formLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
     singIn(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');

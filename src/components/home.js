@@ -1,3 +1,5 @@
+import { singInGoogle } from '../firebase/firebase.js';
+
 export const Home = (onNavigate) => {
 // div general
   const homeDiv = document.createElement('div');
@@ -37,9 +39,19 @@ export const Home = (onNavigate) => {
   const iconGoogle = document.createElement('i');
   iconGoogle.className = 'fa-brands fa-google';
   btnGoogle.appendChild(iconGoogle);
+
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
-  btnGoogle.addEventListener('click', () => {});
+  btnGoogle.addEventListener('click', () => {
+    singInGoogle()
+      .then(() => {
+        onNavigate('/wall');
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  });
 
   return homeDiv;
 };

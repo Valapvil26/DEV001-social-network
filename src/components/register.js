@@ -1,4 +1,4 @@
-import { singUp } from '../firebase/firebaseconfig.js';
+import { singUp } from '../firebase/firebase.js';
 
 export const register = (onNavigate) => {
   // div general
@@ -13,39 +13,45 @@ export const register = (onNavigate) => {
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
   homeDiv.appendChild(divInput);
+  // formulario de registro
+  const formRegister = document.createElement('form');
+  formRegister.className = 'formRegister';
+  divInput.appendChild(formRegister);
   // input nombre de usuario
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
   userName.placeholder = 'Nombre Usuario';
-  divInput.appendChild(userName);
+  formRegister.appendChild(userName);
   // input correo
   const email = document.createElement('input');
   email.className = 'inputAddMail';
-  // email.type = 'email';
-  email.placeholder = 'Correo Electónico';
-  divInput.appendChild(email);
+  email.type = 'email';
+  email.placeholder = 'Correo Electronico';
+  formRegister.appendChild(email);
   // input contraseña
   const password = document.createElement('input');
   password.className = 'inputAddPassword';
-  // password.type = 'password';
+  password.type = 'password';
   password.placeholder = 'Contraseña';
-  divInput.appendChild(password);
+  formRegister.appendChild(password);
   // input confirmar contraseña
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
-  // inputConfirmPassword.type = 'password';
+  inputConfirmPassword.type = 'password';
   inputConfirmPassword.placeholder = 'Confirmar Contraseña';
-  divInput.appendChild(inputConfirmPassword);
+  formRegister.appendChild(inputConfirmPassword);
   // boton registrarme
   const btnregister = document.createElement('button');
+  btnregister.type = 'submit';
   btnregister.className = 'btnRegisterMe';
   btnregister.textContent = 'Registrarme';
-  homeDiv.appendChild(btnregister);
+  formRegister.appendChild(btnregister);
   // boton regresar al home
   const btnHome = document.createElement('button');
   btnHome.className = 'btnbackHome';
   btnHome.textContent = 'Regresar al Home';
   homeDiv.appendChild(btnHome);
+  // texto ó
   const option1 = document.createElement('h3');
   option1.className = 'option1';
   option1.textContent = '------------------ ó ------------------';
@@ -65,7 +71,8 @@ export const register = (onNavigate) => {
   btnHome.addEventListener('click', () => onNavigate('/'));
   btnGoogle1.addEventListener('click', () => {});
 
-  btnregister.addEventListener('click', () => {
+  formRegister.addEventListener('submit', (e) => {
+    e.preventDefault();
     const userCredentials = singUp(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');

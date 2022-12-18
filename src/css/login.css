@@ -44,7 +44,7 @@
     width: 100%;   
 }
 
-.inputDiv {
+.formLogin {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,17 +80,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
-    margin: 10%;
+    height: auto;
 }
 .btnLogin {
-    margin-left: 2%;
-    margin-right: 5%;
-    margin-bottom: 50px;
+    margin-top: 5%;
+    margin-bottom: 10%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
+    font-size: 18px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -99,12 +98,12 @@
 }
 
 .btnSingUp {
-    margin-left: 2%;
-    margin-right: 5%;
-    margin-bottom: 150px;
+    margin-top: 2%;
+    margin-bottom: 10%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
+    font-size: 18px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -114,8 +113,8 @@
 
 .imageLogo1 {
     width: 180px;
-    height: 280px;
-    padding-top: 100px;
+    height: auto;
     display:flex;
-    padding-bottom: 30px;
+    margin-top: 20%;
+    margin-bottom: 10%;
 }
