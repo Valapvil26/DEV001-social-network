@@ -59,7 +59,7 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 100%;
+    width: 60%;
 }
 
 .formRegister {
@@ -68,11 +68,11 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 100%;
+    width: 60%;
 }
 
 .inputAddUserName {
-    margin: 5%;
+    margin-top: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -80,7 +80,7 @@
 }
 
 .inputAddMail {
-    margin: 5%;
+    margin-top: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -88,7 +88,7 @@
 }
 
 .inputAddPassword {
-    margin: 5%;
+    margin-top: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -96,7 +96,7 @@
 }
 
 .inputConfirmPassword {
-    margin: 5%;
+    margin-top: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -104,8 +104,9 @@
 }
 
 .btnRegisterMe {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
@@ -119,6 +120,9 @@
 
 .btnbackHome {
     margin-bottom: 3%;
+    margin-top: -3%;
+    margin-left: 5%;
+    margin-right: 5%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
