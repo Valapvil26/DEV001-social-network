@@ -41,7 +41,7 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 100%;   
+    width: 70%;   
 }
 
 .inputDiv {
@@ -54,7 +54,7 @@
 }
 
 .inputMail {
-    margin: 5%;
+    margin-top: 10%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -69,7 +69,7 @@
 }
 
 .inputPassword {
-    margin: 5%;
+    margin: 3%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -81,13 +81,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    margin: 10%;
+    /* width: 100%; */
+    margin: 3%;
 }
 .btnLogin {
     margin-left: 2%;
     margin-right: 5%;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;

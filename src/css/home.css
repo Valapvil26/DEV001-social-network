@@ -47,7 +47,8 @@
   flex-direction: column;
   margin: 10%;
   height: auto;
-  width: 100%;
+  width: 40%;
+  margin-top: 5%;
   cursor: pointer;
 }
 
