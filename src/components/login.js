@@ -57,7 +57,20 @@ export const login = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('error en singup', errorCode, errorMessage);
+        if (errorCode === 'auth/wrong-password') {
+          console.log('Contraseña Incorrecta');
+        }
+        if (errorCode === 'auth/invalid-email') {
+          console.log('correo no valido');
+        }
+        if (errorCode === 'auth/user-disabled') {
+          console.log('Usuario no habilitado');
+        }
+        if (errorCode === 'auth/user-not-found') {
+          console.log('Usuario no encontrado');
+        } else {
+          console.log(errorMessage);
+        }
       });
   });
 

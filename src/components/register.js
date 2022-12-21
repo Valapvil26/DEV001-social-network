@@ -57,20 +57,18 @@ export const register = (onNavigate) => {
   option1.textContent = '------------------ ó ------------------';
   homeDiv.appendChild(option1);
   // div contenedor botones logearse con google register
-  const divGoogle1 = document.createElement('div');
-  divGoogle1.className = 'divGoogle1';
-  homeDiv.appendChild(divGoogle1);
+  const divGoogle = document.createElement('div');
+  divGoogle.className = 'divGoogle';
+  homeDiv.appendChild(divGoogle);
   // boton logearse con Google1
-  const btnGoogle1 = document.createElement('button');
-  btnGoogle1.className = 'btnGoogle1';
-  divGoogle1.appendChild(btnGoogle1);
-  const iconGoogle1 = document.createElement('i');
-  iconGoogle1.className = 'fa-brands fa-google';
-  btnGoogle1.appendChild(iconGoogle1);
+  const btnGoogle = document.createElement('button');
+  btnGoogle.className = 'btnGoogle';
+  divGoogle.appendChild(btnGoogle);
+  const iconGoogle = document.createElement('i');
+  iconGoogle.className = 'fa-brands fa-google';
+  btnGoogle.appendChild(iconGoogle);
 
   btnHome.addEventListener('click', () => onNavigate('/'));
-  btnGoogle1.addEventListener('click', () => {});
-
   formRegister.addEventListener('submit', (e) => {
     e.preventDefault();
     const userCredentials = singUp(email.value, password.value)
@@ -82,7 +80,17 @@ export const register = (onNavigate) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('error en singup', errorCode, errorMessage);
+        if (errorCode === 'email-auth/alredy-in-use') {
+          console.log('Este correo ya fue registrado');
+        }
+        if (errorCode === 'auth/invalid-email') {
+          console.log('correo no valido');
+        }
+        if (errorCode === 'auth/weak-password') {
+          console.log('La contraseña debe tener minimo 6 caracteres');
+        } else {
+          console.log(errorMessage);
+        }
       });
     console.log(userCredentials);
   });
