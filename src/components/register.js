@@ -9,6 +9,15 @@ export const register = (onNavigate) => {
   imageLogo2.className = 'imageLogo2';
   imageLogo2.src = './img/logo_1.png';
   homeDiv.appendChild(imageLogo2);
+  // toastr alert error en registro
+  const divtoastr = document.createElement('div');
+  divtoastr.className = 'toastr';
+  homeDiv.appendChild(divtoastr);
+  // contenido toastr alert
+  const toastrContent = document.createElement('span');
+  toastrContent.className = 'toastrcontent';
+  toastrContent.textContent = 'Contraseña Incorrecta';
+  divtoastr.appendChild(toastrContent);
   // div contenedor formulario de registro
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
@@ -51,38 +60,41 @@ export const register = (onNavigate) => {
   btnHome.className = 'btnbackHome';
   btnHome.textContent = 'Regresar al Home';
   homeDiv.appendChild(btnHome);
-  // texto ó
-  const option1 = document.createElement('h3');
-  option1.className = 'option1';
-  option1.textContent = '------------------ ó ------------------';
-  homeDiv.appendChild(option1);
-  // div contenedor botones logearse con google register
-  const divGoogle1 = document.createElement('div');
-  divGoogle1.className = 'divGoogle1';
-  homeDiv.appendChild(divGoogle1);
-  // boton logearse con Google1
-  const btnGoogle1 = document.createElement('button');
-  btnGoogle1.className = 'btnGoogle1';
-  divGoogle1.appendChild(btnGoogle1);
-  const iconGoogle1 = document.createElement('i');
-  iconGoogle1.className = 'fa-brands fa-google';
-  btnGoogle1.appendChild(iconGoogle1);
+
+  const closeToastr = () => {
+    setTimeout(() => {
+      toastrContent.style.display = 'none';
+    }, 4500);
+  };
+  const openToastr = (message) => {
+    toastrContent.style.display = 'block';
+    toastrContent.innerText = message;
+    closeToastr();
+  };
 
   btnHome.addEventListener('click', () => onNavigate('/'));
-  btnGoogle1.addEventListener('click', () => {});
-
   formRegister.addEventListener('submit', (e) => {
     e.preventDefault();
     const userCredentials = singUp(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');
+        formRegister.reset();
         const user = userCredential.user;
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('error en singup', errorCode, errorMessage);
+
+        if (errorCode === 'auth/email-already-in-use') {
+          openToastr('Correo ya registrado');
+        } else if (errorCode === 'auth/invalid-email') {
+          openToastr('Correo no valido');
+        } else if (errorCode === 'auth/weak-password') {
+          openToastr('La contraseña debe tener minimo 6 caracteres');
+        } else {
+          openToastr(errorMessage);
+        }
       });
     console.log(userCredentials);
   });

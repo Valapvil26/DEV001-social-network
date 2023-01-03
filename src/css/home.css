@@ -21,24 +21,17 @@
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* home */
-
+#root {
+  background-image: var(--sombra2);
+  padding-bottom: 10%;
+}
 .homeDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   width: 100%;
-  margin-top: 0;
-  background-image: var(--sombra2);
-  z-index: 1;
-}
-
-.title {
-  margin: 15%;
-  height: 50px;
-  width: 50px;
-  z-index: 2;
 }
 
 .divButtons {
@@ -49,8 +42,6 @@
   margin: 5%;
   height: auto;
   width: 40%;
-  margin-top: 5%;
-  cursor: pointer;
 }
 
 .buttonLogin {
@@ -88,8 +79,6 @@
 }
 
 .fa-google {
-  justify-content: center;
-  align-items: center;
   color: var(--azul_color);
   font-size: 30px;
   cursor: pointer;

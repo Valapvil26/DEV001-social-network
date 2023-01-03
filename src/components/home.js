@@ -44,8 +44,10 @@ export const Home = (onNavigate) => {
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   btnGoogle.addEventListener('click', () => {
     singInGoogle()
-      .then(() => {
+      .then((userCredential) => {
         onNavigate('/wall');
+        const user = userCredential.user;
+        console.log(user);
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
