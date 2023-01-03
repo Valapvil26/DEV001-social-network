@@ -1,3 +1,5 @@
+import { addPost, getPost } from '../firebase/firebase.js';
+
 export const Wall = (onNavigate) => {
   // div general
   const homeDiv = document.createElement('div');
@@ -12,25 +14,48 @@ export const Wall = (onNavigate) => {
   wallTitle.className = 'wallTitle';
   wallTitle.textContent = 'Creciendo Juntos';
   homeDiv.appendChild(wallTitle);
-  // div contenedor formulario posts
-  const divPosts = document.createElement('div');
-  divPosts.className = 'divPosts';
-  homeDiv.appendChild(divPosts);
-  // form posts
-  const formPosts = document.createElement('form');
-  formPosts.className = 'formPosts';
-  divPosts.appendChild(formPosts);
+  // div contenedor formulario post
+  const divPost = document.createElement('div');
+  divPost.className = 'divPosts';
+  homeDiv.appendChild(divPost);
+  // form post
+  const formPost = document.createElement('form');
+  formPost.className = 'formPosts';
+  divPost.appendChild(formPost);
   // text area posts
-  const textAreaPosts = document.createElement('textarea');
-  textAreaPosts.className = 'textAreaPosts';
-  textAreaPosts.rows = '5';
-  textAreaPosts.cols = '30';
-  formPosts.appendChild(textAreaPosts);
+  const textAreaPost = document.createElement('textarea');
+  textAreaPost.className = 'textAreaPosts';
+  textAreaPost.rows = '5';
+  textAreaPost.cols = '30';
+  formPost.appendChild(textAreaPost);
   // boton publicar
   const btnShare = document.createElement('button');
   btnShare.className = 'btnShare';
   btnShare.textContent = 'Compartir';
-  formPosts.appendChild(btnShare);
+  formPost.appendChild(btnShare);
+  // div contenedor de posts
+  const postsContainer = document.createElement('div');
+  postsContainer.className = 'postsContainer';
+  homeDiv.appendChild(postsContainer);
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getPost();
+    querySnapshot.forEach((doc) => {
+      const postContent = doc.data();
+      const createPost = document.createElement('div');
+      createPost.className = 'createPost';
+      createPost.textContent = postContent;
+      postsContainer.appendChild(createPost);
+      console.log(postContent);
+    });
+  });
+
+  formPost.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const post = textAreaPost.value;
+    addPost(post);
+    formPost.reset();
+  });
 
   btnClose.addEventListener('click', () => onNavigate('/'));
 
