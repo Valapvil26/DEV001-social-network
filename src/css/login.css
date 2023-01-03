@@ -23,25 +23,18 @@
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* login */
-.homeDivLogin {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    margin-top: 0;
+#root {
     background-image: var(--sombra2);
-    z-index: 1;
+    padding-bottom: 36%;
 }
 
-.divInputs {
+.homeDivLogin {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 70%;   
+    width: 100%; 
 }
 
 .formLogin {
@@ -54,26 +47,31 @@
 }
 
 .inputMail {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
     border: none;
-}
-
-::placeholder {
-    color: var(--rosa_color1);
-    padding-left: 20px;
+    padding-left: 15px;
     font-size: 15px;
     font-family: Queenie-Sans;
 }
 
 .inputPassword {
-    margin: 3%;
+    margin: 5%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
     border: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: Queenie-Sans;
+}
+
+::placeholder {
+    color: var(--rosa_color1);
+    font-size: 15px;
+    font-family: Queenie-Sans;
 }
 
 .divSingUpLogin {
@@ -81,13 +79,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* width: 100%; */
     margin: 3%;
 }
+
 .btnLogin {
-    margin-left: 2%;
+    margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 35px;
+    margin-top: 3%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
@@ -100,8 +98,6 @@
 }
 
 .btnSingUp {
-    margin-top: 2%;
-    margin-bottom: 10%;
     width: 150px;
     height: 40px;
     font-family: Queenie-Sans;
@@ -118,5 +114,26 @@
     height: auto;
     display:flex;
     margin-top: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+}
+
+.toastr {
+    position: relative;
+    right: -30px;
+    width: 50%;
+    display: flex;
+    justify-content: end; 
+}
+
+.toastrcontent{
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.705);
+    width: auto;
+    height: auto;
+    color: rgb(77, 0, 0);
+    font-family: Queenie-Sans;
+    font-size: 15px;
+    padding: 3%;
+    display: none;
 }

@@ -9,6 +9,15 @@ export const register = (onNavigate) => {
   imageLogo2.className = 'imageLogo2';
   imageLogo2.src = './img/logo_1.png';
   homeDiv.appendChild(imageLogo2);
+  // toastr alert error en registro
+  const divtoastr = document.createElement('div');
+  divtoastr.className = 'toastr';
+  homeDiv.appendChild(divtoastr);
+  // contenido toastr alert
+  const toastrContent = document.createElement('span');
+  toastrContent.className = 'toastrcontent';
+  toastrContent.textContent = 'Contraseña Incorrecta';
+  divtoastr.appendChild(toastrContent);
   // div contenedor formulario de registro
   const divInput = document.createElement('div');
   divInput.className = 'divInputRegister';
@@ -51,22 +60,17 @@ export const register = (onNavigate) => {
   btnHome.className = 'btnbackHome';
   btnHome.textContent = 'Regresar al Home';
   homeDiv.appendChild(btnHome);
-  // texto ó
-  const option1 = document.createElement('h3');
-  option1.className = 'option1';
-  option1.textContent = '------------------ ó ------------------';
-  homeDiv.appendChild(option1);
-  // div contenedor botones logearse con google register
-  const divGoogle = document.createElement('div');
-  divGoogle.className = 'divGoogle';
-  homeDiv.appendChild(divGoogle);
-  // boton logearse con Google1
-  const btnGoogle = document.createElement('button');
-  btnGoogle.className = 'btnGoogle';
-  divGoogle.appendChild(btnGoogle);
-  const iconGoogle = document.createElement('i');
-  iconGoogle.className = 'fa-brands fa-google';
-  btnGoogle.appendChild(iconGoogle);
+
+  const closeToastr = () => {
+    setTimeout(() => {
+      toastrContent.style.display = 'none';
+    }, 4500);
+  };
+  const openToastr = (message) => {
+    toastrContent.style.display = 'block';
+    toastrContent.innerText = message;
+    closeToastr();
+  };
 
   btnHome.addEventListener('click', () => onNavigate('/'));
   formRegister.addEventListener('submit', (e) => {
@@ -74,22 +78,22 @@ export const register = (onNavigate) => {
     const userCredentials = singUp(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');
+        formRegister.reset();
         const user = userCredential.user;
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        if (errorCode === 'email-auth/alredy-in-use') {
-          console.log('Este correo ya fue registrado');
-        }
-        if (errorCode === 'auth/invalid-email') {
-          console.log('correo no valido');
-        }
-        if (errorCode === 'auth/weak-password') {
-          console.log('La contraseña debe tener minimo 6 caracteres');
+
+        if (errorCode === 'auth/email-already-in-use') {
+          openToastr('Correo ya registrado');
+        } else if (errorCode === 'auth/invalid-email') {
+          openToastr('Correo no valido');
+        } else if (errorCode === 'auth/weak-password') {
+          openToastr('La contraseña debe tener minimo 6 caracteres');
         } else {
-          console.log(errorMessage);
+          openToastr(errorMessage);
         }
       });
     console.log(userCredentials);

@@ -9,6 +9,15 @@ export const login = (onNavigate) => {
   imageLogo1.className = 'imageLogo1';
   imageLogo1.src = './img/logo_1.png';
   homeDiv.appendChild(imageLogo1);
+  // toastr alert error en  login
+  const divtoastr = document.createElement('div');
+  divtoastr.className = 'toastr';
+  homeDiv.appendChild(divtoastr);
+  // contenido toastr alert
+  const toastrContent = document.createElement('span');
+  toastrContent.className = 'toastrcontent';
+  toastrContent.textContent = 'Contraseña Incorrecta';
+  divtoastr.appendChild(toastrContent);
   // div contenedor de inputs
   const inputDiv = document.createElement('div');
   inputDiv.className = 'divInputs';
@@ -45,12 +54,24 @@ export const login = (onNavigate) => {
   btnSignUp.textContent = 'Regístrate';
   divSignUpLogin.appendChild(btnSignUp);
 
+  const closeToastr = () => {
+    setTimeout(() => {
+      toastrContent.style.display = 'none';
+    }, 4500);
+  };
+  const openToastr = (message) => {
+    toastrContent.style.display = 'block';
+    toastrContent.innerText = message;
+    closeToastr();
+  };
+
   btnSignUp.addEventListener('click', () => onNavigate('/register'));
   formLogin.addEventListener('submit', (e) => {
     e.preventDefault();
     singIn(email.value, password.value)
       .then((userCredential) => {
         onNavigate('/wall');
+        formLogin.reset();
         const user = userCredential.user;
         console.log(user);
       })
@@ -58,18 +79,15 @@ export const login = (onNavigate) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          console.log('Contraseña Incorrecta');
-        }
-        if (errorCode === 'auth/invalid-email') {
-          console.log('correo no valido');
-        }
-        if (errorCode === 'auth/user-disabled') {
-          console.log('Usuario no habilitado');
-        }
-        if (errorCode === 'auth/user-not-found') {
-          console.log('Usuario no encontrado');
+          openToastr('Contraseña Incorrecta');
+        } else if (errorCode === 'auth/invalid-email') {
+          openToastr('correo no valido');
+        } else if (errorCode === 'auth/user-disabled') {
+          openToastr('Usuario no habilitado');
+        } else if (errorCode === 'auth/user-not-found') {
+          openToastr('Usuario no encontrado');
         } else {
-          console.log(errorMessage);
+          openToastr(errorMessage);
         }
       });
   });

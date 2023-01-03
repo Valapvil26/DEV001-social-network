@@ -1,27 +1,78 @@
-.homeDivWall {    
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+/**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /*Para quitar las letras subrayadas*/
+}
+
+/*------------- definir colores ------*/
+:root {
+    --white_color: #edf6f9;
+    --white_color2: #ffffff;
+    --azul_color: #0371bf;
+    --rosa_color1: #c55189;
+    --rosa_color2: #ff86ba;
+    --rosa_color3: #ff9497;
+    --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
+    --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
+}
+/**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
+
+/* wall */
+#root {
+    background-image: var(--sombra2);
+    padding-bottom: 36%;
+
+}.homeDivWall {    
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 100%;
-    margin-top: 0;
-    background-image: var(--sombra2);
-    z-index: 1;
+    width: 100%; 
 }
 
 .wallTitle {
     font-family: Queenie-Sans;
-    font-size: 50px;
+    font-size: 30px;
     color: var(--white_color2);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
 }
 
-.btnCloseSesion {
-    margin: 50px;
-    margin-bottom: 500px;
+.divPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 80%;
+    margin: 5%;
+}
+
+.textAreaPosts {
+    margin: 5%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Queenie-Sans;
+}
+
+.btnShare{
     width: 150px;
     height: 40px;
     font-size: 20px;
@@ -31,4 +82,20 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 3%;
+}
+
+.btnCloseSesion {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    font-family: Queenie-Sans;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5%;
+    position: relative;
+    left: 30%;
 }
