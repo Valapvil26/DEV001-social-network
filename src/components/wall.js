@@ -1,4 +1,6 @@
-import { addPost, getPost } from '../firebase/firebase.js';
+import {
+  addPost, onGetPost, deletePost, getPost, updatePost,
+} from '../firebase/firebase.js';
 
 export const Wall = (onNavigate) => {
   // div general
@@ -27,6 +29,7 @@ export const Wall = (onNavigate) => {
   textAreaPost.className = 'textAreaPosts';
   textAreaPost.rows = '5';
   textAreaPost.cols = '30';
+  textAreaPost.placeholder = 'Comparte aqui...';
   formPost.appendChild(textAreaPost);
   // boton publicar
   const btnShare = document.createElement('button');
@@ -37,24 +40,54 @@ export const Wall = (onNavigate) => {
   const postsContainer = document.createElement('div');
   postsContainer.className = 'postsContainer';
   homeDiv.appendChild(postsContainer);
-
-  window.addEventListener('DOMContentLoaded', async () => {
-    const querySnapshot = await getPost();
-    querySnapshot.forEach((doc) => {
-      const postContent = doc.data();
-      const createPost = document.createElement('div');
-      createPost.className = 'createPost';
-      createPost.textContent = postContent;
-      postsContainer.appendChild(createPost);
-      console.log(postContent);
-    });
-  });
-
-  formPost.addEventListener('submit', (e) => {
+  let editStatus = false;
+  let id = '';
+  formPost.addEventListener('submit', async (e) => {
     e.preventDefault();
     const post = textAreaPost.value;
-    addPost(post);
+    if (!editStatus) {
+      await addPost(post);
+    } else {
+      updatePost(id, {
+        post,
+      });
+      editStatus = false;
+    }
     formPost.reset();
+  });
+  onGetPost((querySnapshot) => {
+    let html = '';
+    querySnapshot.forEach((doc) => {
+      const postContent = doc.data();
+      html += `
+        <div class= 'createPost'>
+           <p>${postContent.post}</p>
+            <div class= 'divContainer'>
+              <button class= 'btnDelete' data-id='${doc.id}'>Delete</button>
+              <button class= 'btnEdit' data-id='${doc.id}'>Edit</button>
+            </div>
+        </div>
+        `;
+      postsContainer.innerHTML = html;
+    });
+    const btnDelete = document.querySelectorAll('.btnDelete');
+    btnDelete.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        await deletePost(btn.dataset.id);
+      });
+    });
+    const btnEdit = document.querySelectorAll('.btnEdit');
+    btnEdit.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const doc = await getPost(btn.dataset.id);
+        const postContent = doc.data().post;
+        textAreaPost.value = postContent;
+        editStatus = true;
+        id = doc.id;
+
+        btnShare.innerHTML = 'Actualizar';
+      });
+    });
   });
 
   btnClose.addEventListener('click', () => onNavigate('/'));
