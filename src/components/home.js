@@ -1,4 +1,4 @@
-import { singInGoogle } from '../firebase/firebase.js';
+import { signInGoogle } from '../firebase/firebase.js';
 
 export const Home = (onNavigate) => {
 // div general
@@ -43,11 +43,9 @@ export const Home = (onNavigate) => {
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   btnGoogle.addEventListener('click', () => {
-    singInGoogle()
-      .then((userCredential) => {
+    signInGoogle()
+      .then(() => {
         onNavigate('/wall');
-        const user = userCredential.user;
-        console.log(user);
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

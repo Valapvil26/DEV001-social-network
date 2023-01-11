@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5%;
+  margin: 6%;
   height: auto;
   width: 40%;
 }
@@ -48,8 +48,8 @@
   margin: 5%;
   width: 150px;
   height: 40px;
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 19px;
+  font-family: 'Queenie-Sans', cursive;
   background-color: var(--azul_color);
   color: var(--white_color2);
   border: none;
@@ -61,8 +61,8 @@
   margin: 5%;
   width: 150px;
   height: 40px;
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 19px;
+  font-family: 'Queenie-Sans', cursive;
   background-color: var(--azul_color);
   color: var(--white_color2);
   border: none;
@@ -92,8 +92,8 @@
 }
 .option {
   color: var(--white_color2);
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 15px;
+  font-family: 'Queenie-Sans', cursive;
   margin-bottom: 2%;
 }
 .imageLogo {
@@ -101,6 +101,6 @@
   height: auto;
   bottom: 50px;
   margin-top: 20%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 

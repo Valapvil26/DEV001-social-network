@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
 /**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 * {
     padding: 0;
@@ -22,10 +20,10 @@
 }
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
-/* wall */
+/* mobile wall */
 #root {
     background-image: var(--sombra2);
-    padding-bottom: 36%;
+    padding-bottom: 20%;
 
 }.homeDivWall {    
     display: flex;
@@ -37,8 +35,8 @@
 }
 
 .wallTitle {
-    font-family: Queenie-Sans;
-    font-size: 30px;
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 25px;
     color: var(--white_color2);
     display: flex;
     justify-content: center;
@@ -59,24 +57,25 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 80%;
-    margin: 5%;
+    width: 100%;
+    margin-bottom: 5%;
 }
 
 .textAreaPosts {
-    margin: 5%;
+    margin-top: 3%;
+    margin-bottom: 5%;
     border-radius: 10px;
     border: none;
     padding: 10px;
-    font-size: 15px;
-    font-family: Queenie-Sans;
+    font-size: 17px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .btnShare{
     width: 150px;
     height: 40px;
     font-size: 20px;
-    font-family: Queenie-Sans;
+    font-family: 'Queenie-Sans', cursive;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -88,8 +87,8 @@
 .btnCloseSesion {
     width: 100px;
     height: 30px;
-    font-size: 15px;
-    font-family: Queenie-Sans;
+    font-size: 14px;
+    font-family: 'Queenie-Sans', cursive;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -113,24 +112,65 @@
     margin: 5%;
     width: 270px;
     height: auto;
-    font-size: 20px;
-    font-family: Queenie-Sans;
+    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    padding-top: 2%;
     border-radius: 10px;
     background-color: #ffffff;
 }
 
-.divContainer {
+.userAndDateContainer {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--azul_color);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.userNamePost {
+    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    color: var(--white_color2);
+    padding-top: 2%;
+}
+
+.date {
+    font-size: 14px;
+    font-family: 'Queenie-Sans', cursive;
+    color: var(--white_color2);
+    padding-bottom: 2%;
+}
+
+.postText {
+    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    padding-top: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 8%;
+}
+
+.likes {
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    color: #0371bf;
+    position: relative;
+    left: 70%;
+    padding-bottom: 1%;
+}
+
+.divContainerbtns {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 30px;
-    margin-top: 12%;
+    height: auto;
     border: none;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -138,25 +178,59 @@
 }
 
 .btnDelete {
-    font-size: 15px;
-    font-family: Queenie-Sans;
+    font-size: 14px;
+    font-family: 'Queenie-Sans', cursive;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 50px;
-    height: 20px;
+    height: 30px;
 }
 
 .btnEdit {
-    font-size: 15px;
-    font-family: Queenie-Sans;
+    font-size: 14px;
+    font-family: 'Queenie-Sans', cursive;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 50px;
-    height: 20px;
+    height: 30px;
+}
+
+.btnLike {
+    font-size: 14px;
+    font-family: 'Queenie-Sans', cursive;
+    background-color: var(--azul_color);
+    color: var(--white_color2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;   
+}
+
+.toastr {
+    position: relative;
+    right: -40px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    margin-top: 5%; 
+}
+
+.toastrcontent{
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.705);
+    width: auto;
+    height: auto;
+    color: rgb(77, 0, 0);
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 14px;
+    padding: 3%;
+    display: none;
 }
