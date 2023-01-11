@@ -1,4 +1,4 @@
-import { singUp } from '../firebase/firebase.js';
+import { signUp, updateName } from '../firebase/firebase.js';
 
 export const register = (onNavigate) => {
   // div general
@@ -75,12 +75,11 @@ export const register = (onNavigate) => {
   btnHome.addEventListener('click', () => onNavigate('/'));
   formRegister.addEventListener('submit', (e) => {
     e.preventDefault();
-    const userCredentials = singUp(email.value, password.value)
-      .then((userCredential) => {
-        onNavigate('/wall');
+    signUp(email.value, password.value)
+      .then(() => {
+        updateName(userName.value);
         formRegister.reset();
-        const user = userCredential.user;
-        console.log(user);
+        onNavigate('/wall');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -96,7 +95,6 @@ export const register = (onNavigate) => {
           openToastr(errorMessage);
         }
       });
-    console.log(userCredentials);
   });
 
   return homeDiv;

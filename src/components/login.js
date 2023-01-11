@@ -1,4 +1,4 @@
-import { singIn } from '../firebase/firebase.js';
+import { signIn } from '../firebase/firebase.js';
 
 export const login = (onNavigate) => {
 // div cuerpo login
@@ -68,12 +68,10 @@ export const login = (onNavigate) => {
   btnSignUp.addEventListener('click', () => onNavigate('/register'));
   formLogin.addEventListener('submit', (e) => {
     e.preventDefault();
-    singIn(email.value, password.value)
-      .then((userCredential) => {
-        onNavigate('/wall');
+    signIn(email.value, password.value)
+      .then(() => {
         formLogin.reset();
-        const user = userCredential.user;
-        console.log(user);
+        onNavigate('/wall');
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
 /**------- INICIO CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 * {
     padding: 0;
@@ -54,7 +52,7 @@
     border: none;
     padding-left: 15px;
     font-size: 15px;
-    font-family: Queenie-Sans;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .inputPassword {
@@ -65,13 +63,13 @@
     border: none;
     padding-left: 15px;
     font-size: 15px;
-    font-family: Queenie-Sans;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 ::placeholder {
     color: var(--rosa_color1);
     font-size: 15px;
-    font-family: Queenie-Sans;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .divSingUpLogin {
@@ -88,8 +86,8 @@
     margin-top: 3%;
     width: 150px;
     height: 40px;
-    font-family: Queenie-Sans;
-    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 16px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -100,8 +98,8 @@
 .btnSingUp {
     width: 150px;
     height: 40px;
-    font-family: Queenie-Sans;
-    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 16px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -132,7 +130,7 @@
     width: auto;
     height: auto;
     color: rgb(77, 0, 0);
-    font-family: Queenie-Sans;
+    font-family: 'Queenie-Sans', cursive;
     font-size: 15px;
     padding: 3%;
     display: none;
