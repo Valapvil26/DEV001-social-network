@@ -124,10 +124,15 @@ export const Wall = (onNavigate) => {
       }
       postsContainer.innerHTML = html;
     });
+
     const btnDelete = document.querySelectorAll('.btnDelete');
     btnDelete.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        await deletePost(btn.dataset.id);
+        // eslint-disable-next-line no-restricted-globals, no-alert
+        const confirmDelete = confirm('¿Quieres eliminar esta publicación?');
+        if (confirmDelete === true) {
+          await deletePost(btn.dataset.id);
+        }
       });
     });
     const btnEdit = document.querySelectorAll('.btnEdit');
