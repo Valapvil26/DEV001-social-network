@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: auto;
+    height: 100vh;
     width: 100%; 
 }
 
@@ -56,7 +56,7 @@
 }
 
 .inputPassword {
-    margin: 5%;
+    margin: 6%;
     width: 250px;
     height: 40px;
     border-radius: 10px;
@@ -83,7 +83,7 @@
 .btnLogin {
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 3%;
+    margin-top: 5%;
     width: 150px;
     height: 40px;
     font-family: 'Queenie-Sans', cursive;
@@ -98,6 +98,7 @@
 .btnSingUp {
     width: 150px;
     height: 40px;
+    margin-top: 5px;
     font-family: 'Queenie-Sans', cursive;
     font-size: 16px;
     background-color: var(--azul_color);
@@ -112,7 +113,7 @@
     height: auto;
     display:flex;
     margin-top: 20%;
-    margin-bottom: 15%;
+    
 }
 
 .toastr {
@@ -122,6 +123,15 @@
     display: flex;
     justify-content: end; 
 }
+
+
+@media (min-width: 900px) {
+    .homeDivLogin { 
+        display: flex;
+        width: 80%;
+        margin: auto;
+      }
+    }
 
 .toastrcontent{
     border: none;
@@ -134,4 +144,16 @@
     font-size: 15px;
     padding: 3%;
     display: none;
+}
+
+ .labelEmail{
+    padding-right: 120px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+}
+.labelPasword{
+    margin: 5px;
+    padding-right: 160px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
