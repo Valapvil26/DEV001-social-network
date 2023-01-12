@@ -27,23 +27,43 @@ export const register = (onNavigate) => {
   formRegister.className = 'formRegister';
   divInput.appendChild(formRegister);
   // input nombre de usuario
+  const labelUserName = document.createElement('label');
+  labelUserName.setAttribute = ('for', 'userName');
+  labelUserName.className = 'labelUser';
+  labelUserName.textContent = 'Nombre de Usuario';
+  formRegister.appendChild(labelUserName);
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
   userName.placeholder = 'Nombre Usuario';
   formRegister.appendChild(userName);
   // input correo
+  const labelAddMail = document.createElement('label');
+  labelAddMail.setAttribute = ('for', 'email');
+  labelAddMail.className = 'labelEmail';
+  labelAddMail.textContent = 'Correo Electrónico';
+  formRegister.appendChild(labelAddMail);
   const email = document.createElement('input');
   email.className = 'inputAddMail';
   email.type = 'email';
-  email.placeholder = 'Correo Electronico';
+  email.placeholder = 'Correo Electrónico';
   formRegister.appendChild(email);
   // input contraseña
+  const labelAddPasword = document.createElement('label');
+  labelAddPasword.setAttribute = ('for', 'password');
+  labelAddPasword.className = 'labelPasword';
+  labelAddPasword.textContent = 'Contraseña';
+  formRegister.appendChild(labelAddPasword);
   const password = document.createElement('input');
   password.className = 'inputAddPassword';
   password.type = 'password';
   password.placeholder = 'Contraseña';
   formRegister.appendChild(password);
   // input confirmar contraseña
+  const labelConfirmPasword = document.createElement('label');
+  labelConfirmPasword.setAttribute = ('for', 'inputConfirmPassword');
+  labelConfirmPasword.className = 'labelConfirmPasword';
+  labelConfirmPasword.textContent = 'Confirmar Contraseña';
+  formRegister.appendChild(labelConfirmPasword);
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.className = 'inputConfirmPassword';
   inputConfirmPassword.type = 'password';

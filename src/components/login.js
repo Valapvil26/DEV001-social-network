@@ -27,12 +27,26 @@ export const login = (onNavigate) => {
   formLogin.className = 'formLogin';
   inputDiv.appendChild(formLogin);
   // input usuario
+  const labelEmail = document.createElement('label');
+  labelEmail.setAttribute = ('for', 'email');
+  labelEmail.className = 'labelEmail';
+  labelEmail.textContent = 'Correo Electrónico';
+  formLogin.appendChild(labelEmail);
   const email = document.createElement('input');
-  email.className = 'inputMail';
-  email.type = 'email';
-  email.placeholder = 'Correo o Usuario';
+  email.setAttribute('type', 'email');
+  email.setAttribute('class', 'inputMail');
+  email.setAttribute('placeholder', 'Correo');
   formLogin.appendChild(email);
+  // email.className = 'inputMail';
+  // email.type = 'email';
+  // email.placeholder = 'Correo o Usuario';
+  // formLogin.appendChild(email);
   // input contraseña
+  const labelPassword = document.createElement('label');
+  labelPassword.setAttribute('for', 'pasword');
+  labelPassword.className = 'labelPasword';
+  labelPassword.textContent = 'Contraseña';
+  formLogin.appendChild(labelPassword);
   const password = document.createElement('input');
   password.className = 'inputPassword';
   password.type = 'password';

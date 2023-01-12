@@ -213,6 +213,13 @@
     height: 30px;   
 }
 
+@media (min-width: 900px) {
+    .homeDivWall { 
+        display: flex;
+        width: 80%;
+        margin: auto;
+      }
+    }
 .toastr {
     position: relative;
     right: -40px;
