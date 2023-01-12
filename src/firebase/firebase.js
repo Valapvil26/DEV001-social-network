@@ -27,5 +27,3 @@ export const onGetPost = (querySnapshot) => {
 export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
 export const getPost = (id) => getDoc(doc(db, 'posts', id));
 export const updatePost = (id, newfields) => updateDoc(doc(db, 'posts', id), newfields);
-
-// export const orderPosts = () => query(collection(db, 'posts'), orderBy('date', 'desc'));
