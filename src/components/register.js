@@ -7,7 +7,7 @@ export const register = (onNavigate) => {
   // imagen logo de registro
   const imageLogo2 = document.createElement('img');
   imageLogo2.className = 'imageLogo2';
-  imageLogo2.src = './img/logo_1.png';
+  imageLogo2.src = 'https://i.postimg.cc/kG0cRWLG/logo-1.png';
   homeDiv.appendChild(imageLogo2);
   // toastr alert error en registro
   const divtoastr = document.createElement('div');

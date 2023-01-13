@@ -7,7 +7,7 @@ export const login = (onNavigate) => {
   // imagen logo
   const imageLogo1 = document.createElement('img');
   imageLogo1.className = 'imageLogo1';
-  imageLogo1.src = './img/logo_1.png';
+  imageLogo1.src = 'https://i.postimg.cc/kG0cRWLG/logo-1.png';
   homeDiv.appendChild(imageLogo1);
   // toastr alert error en  login
   const divtoastr = document.createElement('div');
