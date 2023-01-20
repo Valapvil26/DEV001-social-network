@@ -163,6 +163,7 @@
     position: relative;
     left: 70%;
     padding-bottom: 1%;
+    visibility: hidden;
 }
 
 .divContainerbtns {
@@ -211,6 +212,7 @@
     cursor: pointer;
     width: 80px;
     height: 30px;   
+    visibility: hidden;
 }
 
 @media (min-width: 900px) {

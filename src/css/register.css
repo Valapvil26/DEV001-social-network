@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none; */
-    /*Para quitar las letras subrayadas*/
+/*Para quitar las letras subrayadas*/
 /*}*/
 
 /*------------- Lo utilizo para definir los colores ------*/
@@ -18,12 +18,13 @@
     --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
     --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
 }
+
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* registro */
 #root {
     background-image: var(--sombra2);
-    padding-bottom: 11%;
+    padding-bottom: 5%;
 }
 
 .homeDivRegister {
@@ -98,7 +99,7 @@
 .btnRegisterMe {
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 15%;
+    margin-top: 10%;
     width: 150px;
     height: 40px;
     font-family: 'Queenie-Sans', cursive;
@@ -113,8 +114,7 @@
 .btnbackHome {
     margin-left: 5%;
     margin-right: 5%;
-    padding: 8px;
-    margin-top: 5%;
+    margin-top: 1%;
     width: 150px;
     height: 40px;
     font-family: 'Queenie-Sans', cursive;
@@ -129,8 +129,8 @@
 .imageLogo2 {
     width: 180px;
     height: auto;
-    display:flex;
-    
+    display: flex;
+
 }
 
 .toastr {
@@ -138,19 +138,19 @@
     right: -30px;
     width: 50%;
     display: flex;
-    justify-content: end; 
+    justify-content: end;
 }
 
 
 @media (min-width: 900px) {
-    .homeDivRegister { 
+    .homeDivRegister {
         display: flex;
         width: 80%;
         margin: auto;
-      }
     }
+}
 
-.toastrcontent{
+.toastrcontent {
     border: none;
     border-radius: 10px;
     background-color: rgba(255, 0, 0, 0.705);
@@ -162,15 +162,35 @@
     padding: 3%;
     display: none;
 }
-.labelUser{
 
-padding-right: 120px;
+.labelUser {
     font-size: 15px;
     font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 23%;
 }
-.labelConfirmPasword{
-    margin: 5px;
-    padding-right: 100px;
+
+.labelEmail {
     font-size: 15px;
     font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 23%;
+}
+
+.labelPasword{
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 34%;
+}
+
+.labelConfirmPasword {
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 19%;
 }
