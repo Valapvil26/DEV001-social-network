@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    /*Para quitar las letras subrayadas*/
 }
 
 /*------------- definir colores ------*/
@@ -23,7 +22,6 @@
 /* mobile wall */
 #root {
     background-image: var(--sombra2);
-    padding-bottom: 20%;
 
 }.homeDivWall {    
     display: flex;

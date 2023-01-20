@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    /*Para quitar las letras subrayadas*/
 }
 
 /*------------- Lo utilizo para definir los colores ------*/
@@ -23,7 +22,6 @@
 /* login */
 #root {
     background-image: var(--sombra2);
-    padding-bottom: 36%;
 }
 
 .homeDivLogin {
@@ -113,7 +111,7 @@
     width: 180px;
     height: auto;
     display:flex;
-    margin-top: 20%;
+    margin-top: 5%;
     
 }
 
