@@ -22,7 +22,6 @@
 /* home */
 #root {
   background-image: var(--sombra2);
-  padding-bottom: 10%;
 }
 .homeDiv {
   display: flex;

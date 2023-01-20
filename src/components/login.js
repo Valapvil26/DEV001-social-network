@@ -33,14 +33,10 @@ export const login = (onNavigate) => {
   labelEmail.textContent = 'Correo Electrónico';
   formLogin.appendChild(labelEmail);
   const email = document.createElement('input');
-  email.setAttribute('type', 'email');
-  email.setAttribute('class', 'inputMail');
-  email.setAttribute('placeholder', 'Correo');
+  email.className = 'inputMail';
+  email.type = 'email';
+  email.placeholder = 'Correo';
   formLogin.appendChild(email);
-  // email.className = 'inputMail';
-  // email.type = 'email';
-  // email.placeholder = 'Correo o Usuario';
-  // formLogin.appendChild(email);
   // input contraseña
   const labelPassword = document.createElement('label');
   labelPassword.setAttribute('for', 'pasword');

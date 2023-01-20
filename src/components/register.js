@@ -34,7 +34,7 @@ export const register = (onNavigate) => {
   formRegister.appendChild(labelUserName);
   const userName = document.createElement('input');
   userName.className = 'inputAddUserName';
-  userName.placeholder = 'Nombre Usuario';
+  userName.placeholder = 'Nombre de Usuario';
   formRegister.appendChild(userName);
   // input correo
   const labelAddMail = document.createElement('label');
@@ -59,16 +59,16 @@ export const register = (onNavigate) => {
   password.placeholder = 'Contraseña';
   formRegister.appendChild(password);
   // input confirmar contraseña
-  const labelConfirmPasword = document.createElement('label');
-  labelConfirmPasword.setAttribute = ('for', 'inputConfirmPassword');
-  labelConfirmPasword.className = 'labelConfirmPasword';
-  labelConfirmPasword.textContent = 'Confirmar Contraseña';
-  formRegister.appendChild(labelConfirmPasword);
-  const inputConfirmPassword = document.createElement('input');
-  inputConfirmPassword.className = 'inputConfirmPassword';
-  inputConfirmPassword.type = 'password';
-  inputConfirmPassword.placeholder = 'Confirmar Contraseña';
-  formRegister.appendChild(inputConfirmPassword);
+  // const labelConfirmPasword = document.createElement('label');
+  // labelConfirmPasword.setAttribute = ('for', 'inputConfirmPassword');
+  // labelConfirmPasword.className = 'labelConfirmPasword';
+  // labelConfirmPasword.textContent = 'Confirmar Contraseña';
+  // formRegister.appendChild(labelConfirmPasword);
+  // const inputConfirmPassword = document.createElement('input');
+  // inputConfirmPassword.className = 'inputConfirmPassword';
+  // inputConfirmPassword.type = 'password';
+  // inputConfirmPassword.placeholder = 'Confirmar Contraseña';
+  // formRegister.appendChild(inputConfirmPassword);
   // boton registrarme
   const btnregister = document.createElement('button');
   btnregister.type = 'submit';

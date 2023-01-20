@@ -6,12 +6,12 @@ export const Wall = (onNavigate) => {
   // div general
   const homeDiv = document.createElement('div');
   homeDiv.className = 'homeDivWall';
-  // boton regresar al home
+  // boton Cerrar sesion
   const btnClose = document.createElement('button');
   btnClose.className = 'btnCloseSesion';
   btnClose.textContent = 'Cerrar Sesión';
   homeDiv.appendChild(btnClose);
-  // titulo del muro
+  // titulo del muro - nombre de usuario
   const wallTitle = document.createElement('h2');
   wallTitle.className = 'wallTitle';
   wallTitle.textContent = 'Creciendo Juntos';
@@ -144,28 +144,20 @@ export const Wall = (onNavigate) => {
         editStatus = true;
         id = doc.id;
 
-        btnShare.innerHTML = 'Actualizar';
-      });
-    });
-    const btnLike = document.querySelectorAll('.btnLike');
-    btnLike.forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        const doc = await getPost(btn.dataset.id);
-        const postContent = doc.data();
-        id = doc.id;
-        console.log(postContent);
+        btnShare.innerHTML = 'Editar';
       });
     });
   });
 
   btnClose.addEventListener('click', async () => {
     formPost.reset();
-    await logOut().then(() => {
-      onNavigate('/');
-    }).catch((error) => {
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
+    await logOut()
+      .then(() => {
+        onNavigate('/');
+      }).catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   });
 
   return homeDiv;

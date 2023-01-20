@@ -1,6 +1,6 @@
 import {
   createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  signInWithPopup, signOut, // updateProfile,
+  signInWithPopup, signOut,
 } from 'firebase/auth';
 import {
   addDoc, deleteDoc, onSnapshot, getDoc, updateDoc,
@@ -75,11 +75,6 @@ describe('updateName', () => {
   it('deberia ser una funcion', () => {
     expect(typeof updateName).toBe('function');
   });
-  // it('ejecuta updateProfile', async () => {
-  //   const userName = { displayName: 'Fulanito' };
-  //   await updateName(userName);
-  //   expect(updateProfile).toHaveBeenCalled();
-  // });
 });
 
 describe('addPost', () => {
