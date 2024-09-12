@@ -1,4 +1,4 @@
-import { singInGoogle } from '../firebase/firebase.js';
+import { signInGoogle } from '../firebase/firebase.js';
 
 export const Home = (onNavigate) => {
 // div general
@@ -7,7 +7,7 @@ export const Home = (onNavigate) => {
   // titulo de la pagina
   const imageLogo = document.createElement('img');
   imageLogo.className = 'imageLogo';
-  imageLogo.src = './img/logo.png';
+  imageLogo.src = 'https://i.postimg.cc/ZRrKhmZQ/logo.png';
   homeDiv.appendChild(imageLogo);
   // div contenedor para botones login y registro
   const buttonsDiv = document.createElement('div');
@@ -43,7 +43,7 @@ export const Home = (onNavigate) => {
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   btnGoogle.addEventListener('click', () => {
-    singInGoogle()
+    signInGoogle()
       .then(() => {
         onNavigate('/wall');
       }).catch((error) => {

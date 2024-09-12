@@ -4,7 +4,6 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  /*Para quitar las letras subrayadas*/
 }
 
 /*------------- Se usa para definir los colores ------*/
@@ -21,24 +20,16 @@
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* home */
-
+#root {
+  background-image: var(--sombra2);
+}
 .homeDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  margin-top: 0;
-  background-image: var(--sombra2);
-  z-index: 1;
-}
-
-.title {
-  margin: 15%;
-  height: 50px;
-  width: 50px;
-  z-index: 2;
 }
 
 .divButtons {
@@ -46,19 +37,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5%;
+  margin: 6%;
   height: auto;
   width: 40%;
-  margin-top: 5%;
-  cursor: pointer;
 }
 
 .buttonLogin {
   margin: 5%;
   width: 150px;
   height: 40px;
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 19px;
+  font-family: 'Queenie-Sans', cursive;
   background-color: var(--azul_color);
   color: var(--white_color2);
   border: none;
@@ -70,8 +59,8 @@
   margin: 5%;
   width: 150px;
   height: 40px;
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 19px;
+  font-family: 'Queenie-Sans', cursive;
   background-color: var(--azul_color);
   color: var(--white_color2);
   border: none;
@@ -88,8 +77,6 @@
 }
 
 .fa-google {
-  justify-content: center;
-  align-items: center;
   color: var(--azul_color);
   font-size: 30px;
   cursor: pointer;
@@ -103,8 +90,8 @@
 }
 .option {
   color: var(--white_color2);
-  font-size: 20px;
-  font-family: Queenie-Sans;
+  font-size: 15px;
+  font-family: 'Queenie-Sans', cursive;
   margin-bottom: 2%;
 }
 .imageLogo {
@@ -112,6 +99,13 @@
   height: auto;
   bottom: 50px;
   margin-top: 20%;
-  margin-bottom: 5%;
+
 }
 
+@media (min-width: 900px) {
+.homeDiv { 
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+}

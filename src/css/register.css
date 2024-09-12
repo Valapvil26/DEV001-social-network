@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    /*Para quitar las letras subrayadas*/
 }
 
 /*------------- Lo utilizo para definir los colores ------*/
@@ -18,48 +17,21 @@
     --sombra: linear-gradient(90deg, #e2b3c5 80%, #ffffff 50%);
     --sombra2: linear-gradient(to top, #ff9497 0%, #ff86ba 99%, #c55189 100%);
 }
+
 /**------- FIN CONFIGURACIÓN GENERAL PARA EMPEZAR ------*/
 
 /* registro */
+#root {
+    background-image: var(--sombra2);
+}
+
 .homeDivRegister {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: auto;
+    height: 103vh;
     width: 100%;
-    margin-top: 0;
-    background-image: var(--sombra2);
-    z-index: 1;
-}
-
-.registerTitle {
-    margin: 10%;
-}
-
-::placeholder {
-    color: var(--rosa_color1);
-    padding-left: 20px;
-    font-size: 15px;
-    font-family: Queenie-Sans;
-}
-
-.inputDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-}
-
-.divInputRegister {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    width: 60%;
 }
 
 .formRegister {
@@ -68,7 +40,13 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 60%;
+    width: 100%;
+}
+
+::placeholder {
+    color: var(--rosa_color1);
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .inputAddUserName {
@@ -77,6 +55,9 @@
     height: 40px;
     border-radius: 10px;
     border: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .inputAddMail {
@@ -85,6 +66,9 @@
     height: 40px;
     border-radius: 10px;
     border: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .inputAddPassword {
@@ -93,6 +77,9 @@
     height: 40px;
     border-radius: 10px;
     border: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .inputConfirmPassword {
@@ -101,16 +88,19 @@
     height: 40px;
     border-radius: 10px;
     border: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
 }
 
 .btnRegisterMe {
-    margin: 5%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 10%;
     width: 150px;
     height: 40px;
-    font-family: Queenie-Sans;
-    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 16px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -119,14 +109,14 @@
 }
 
 .btnbackHome {
-    margin-bottom: 3%;
-    margin-top: -3%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
     width: 150px;
     height: 40px;
-    font-family: Queenie-Sans;
-    font-size: 18px;
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 16px;
     background-color: var(--azul_color);
     color: var(--white_color2);
     border: none;
@@ -137,39 +127,69 @@
 .imageLogo2 {
     width: 180px;
     height: auto;
-    display:flex;
-    margin-top: 20%;
-    margin-bottom: 10%;
-}
-
-.option1 {
-    color: var(--white_color2);
-    font-size: 20px;
-    font-family: Queenie-Sans;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.divGoogle1 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5%;
-    color: var(--azul_color);
+    margin-top: 15%;
+
 }
 
-.fa-google {
-    justify-content: center;
-    align-items: center;
-    color: var(--azul_color);
-    font-size: 30px;
-    cursor: pointer;
+.toastr {
+    position: relative;
+    right: -30px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
 }
 
-.btnGoogle1{
-    width: 50px;
-    height: 50px;
-    border-radius: 30px;
+
+@media (min-width: 900px) {
+    .homeDivRegister {
+        display: flex;
+        width: 80%;
+        margin: auto;
+    }
+}
+
+.toastrcontent {
     border: none;
-    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.705);
+    width: auto;
+    height: auto;
+    color: rgb(77, 0, 0);
+    font-family: 'Queenie-Sans', cursive;
+    font-size: 15px;
+    padding: 3%;
+    display: none;
+}
+
+.labelUser {
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 23%;
+}
+
+.labelEmail {
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 23%;
+}
+
+.labelPasword{
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 34%;
+}
+
+.labelConfirmPasword {
+    font-size: 15px;
+    font-family: 'Queenie-Sans', cursive;
+    margin-top: 5%;
+    position: relative;
+    right: 19%;
 }
